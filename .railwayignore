@@ -1,0 +1,12 @@
+node_modules
+client/node_modules
+*.log
+.env
+.DS_Store
+uploads
+temp
+*.md
+GUIDE_UTILISATION.md
+INSTALLATION.md
+PROJET_COMPLET.md
+README.md

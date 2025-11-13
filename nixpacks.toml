@@ -1,0 +1,16 @@
+[phases.setup]
+nixPkgs = ['nodejs_20', 'python3']
+
+[phases.install]
+cmds = [
+  'npm ci --omit=dev --ignore-scripts',
+  'cd client && npm ci --omit=dev'
+]
+
+[phases.build]
+cmds = [
+  'cd client && npm run build'
+]
+
+[start]
+cmd = 'node server/index.js'
