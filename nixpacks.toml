@@ -1,10 +1,11 @@
 [phases.setup]
-nixPkgs = ['nodejs_20', 'python3']
+nixPkgs = ['nodejs_20']
+aptPkgs = []
 
 [phases.install]
 cmds = [
-  'npm ci --omit=dev --ignore-scripts',
-  'cd client && npm ci --omit=dev'
+  'npm install --omit=dev --ignore-scripts --no-optional',
+  'cd client && npm install --omit=dev'
 ]
 
 [phases.build]
