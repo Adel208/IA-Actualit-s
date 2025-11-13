@@ -1,0 +1,55 @@
+{
+  "name": "ia-actualites-auto",
+  "version": "1.0.0",
+  "description": "Site web automatisé d'actualités sur l'Intelligence Artificielle",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server/index.js",
+    "client": "cd client && npm run dev",
+    "build": "cd client && npm run build",
+    "start": "node server/index.js",
+    "scrape": "node server/jobs/scrapeNews.js",
+    "generate": "node server/jobs/generateArticles.js",
+    "publish": "node server/jobs/publishToSocial.js",
+    "cron": "node server/jobs/cronManager.js",
+    "install-all": "npm install && cd client && npm install"
+  },
+  "keywords": [
+    "IA",
+    "actualités",
+    "automatisation",
+    "SEO"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.68.0",
+    "axios": "^1.6.2",
+    "cheerio": "^1.0.0-rc.12",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.5",
+    "facebook-nodejs-business-sdk": "^18.0.3",
+    "feed": "^4.2.2",
+    "helmet": "^7.1.0",
+    "joi": "^17.11.0",
+    "mongoose": "^8.0.3",
+    "node-cron": "^3.0.3",
+    "node-schedule": "^2.1.1",
+    "openai": "^4.20.1",
+    "puppeteer": "^21.6.1",
+    "rss-parser": "^3.13.0",
+    "sharp": "^0.33.1",
+    "sitemap": "^7.1.1",
+    "slugify": "^1.6.6",
+    "twitter-api-v2": "^1.15.2",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.2"
+  }
+}
